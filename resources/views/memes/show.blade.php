@@ -8,7 +8,8 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4>{{ $meme->nama }}</h4>
-                <div class="btn-group">
+                @if ($meme->user_id === Auth::id())
+                    <div class="btn-group">
                     <a href="{{ route('memes.edit', $meme) }}" class="btn btn-outline-warning">
                         <i class="fas fa-edit"></i> Edit
                     </a>
@@ -22,6 +23,7 @@
                         </button>
                     </form>
                 </div>
+                @endif
             </div>
             <div class="card-body">
                 <div class="text-center mb-4">
@@ -90,7 +92,7 @@
             </div>
         </div>
 
-        @if($meme->tanggal_upload_sosmed)
+        @if($meme->user_id === Auth::id() && $meme->tanggal_upload_sosmed )
             <div class="card mt-3">
                 <div class="card-header">
                     <h5><i class="fas fa-bell"></i> Reminder</h5>

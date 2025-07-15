@@ -31,7 +31,7 @@
 
                 @if($meme->gambar)
                     <div class="mt-2">
-                        <img src="{{ asset('storage/' . $meme->gambar) }}"
+                        <img src="{{ asset('storage/memes/' . $meme->gambar) }}"
                              alt="{{ $meme->nama }}"
                              style="max-width: 200px; height: auto;">
                         <small class="form-text text-muted d-block">Gambar saat ini (kosongkan jika tidak ingin mengubah)</small>
